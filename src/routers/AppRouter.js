@@ -1,7 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
-
 import Header from '../components/Header';
+import Home from '../components/Home';
+import Portfolio from '../components/Portfolio';
+import Contact from '../components/Contact';
+import PortfolioItems from '../components/PortfolioItems';
 import NoFoundPage from '../components/NoFoundPage';
 
 const AppRouter = () => (
@@ -9,7 +12,10 @@ const AppRouter = () => (
         <div>
             <Header />
             <Switch>
-                
+                <Route path="/" component={Home} exact={true} />
+                <Route path="/portfolio" component={Portfolio} exact={true} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/portfolio/:id" component={PortfolioItems} />
                 <Route component={NoFoundPage} />
             </Switch>
         </div> 
